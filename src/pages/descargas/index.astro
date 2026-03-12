@@ -1,0 +1,265 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../config/site';
+
+const title = 'Descargas Flujo TV Mexico | Guias Android TV, Google TV y Fire Stick';
+const description = 'Centro de guias oficiales de Flujo TV Mexico para Android, TV Box, Fire Stick y Google TV. Incluye APK y soporte de instalacion.';
+
+const cards = [
+  {
+    title: 'Celular o Tablet',
+    summary: 'Descarga directa del APK oficial para Android movil y tablet.',
+    href: site.download.mobileApkHref,
+    cta: 'Descargar APK',
+    badge: 'APK oficial',
+    external: true,
+  },
+  {
+    title: 'Android TV y TV Box',
+    summary: 'Guia paso a paso con video y checklist de instalacion.',
+    href: '/descargas/android-tv/',
+    cta: 'Ver guia Android TV',
+    badge: 'Guia tecnica',
+  },
+  {
+    title: 'Google TV / Chromecast',
+    summary: 'Instalacion optimizada para Google TV y Chromecast.',
+    href: '/descargas/google-tv/',
+    cta: 'Ver guia Google TV',
+    badge: 'Guia tecnica',
+  },
+  {
+    title: 'Fire Stick',
+    summary: 'Flujo documentado para instalar con Downloader.',
+    href: '/descargas/fire-stick/',
+    cta: 'Ver guia Fire Stick',
+    badge: 'Guia tecnica',
+  },
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://mx.flujooficial.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Descargas', item: 'https://mx.flujooficial.com/descargas/' },
+  ],
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Guias de instalacion Flujo TV Mexico',
+  itemListElement: cards.map((card, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    name: card.title,
+    url: card.external ? card.href : `https://mx.flujooficial.com${card.href}`,
+  })),
+};
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} slot="head" />
+  <Navigation />
+
+  <main class="py-14 md:py-20">
+    <section class="container-main space-y-8">
+      <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 transition hover:text-white">← Volver al inicio</a>
+
+      <header class="mx-stage relative overflow-hidden rounded-3xl border border-white/15 p-6 md:p-10">
+        <div class="mx-stage-glow" aria-hidden="true"></div>
+        <div class="relative grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.22em] text-emerald-300">Centro de instalacion</span>
+            <h1 class="mt-3 font-display text-3xl font-black text-white md:text-5xl">Guia oficial Flujo TV Mexico</h1>
+            <p class="mt-4 max-w-2xl text-zinc-100">
+              Elige tu dispositivo y abre la ruta correcta desde el primer intento. Sin pasos ambiguos, con enlaces directos
+              y soporte de activacion.
+            </p>
+          </div>
+
+          <div class="mx-code rounded-2xl border border-emerald-300/40 bg-black/35 p-5 backdrop-blur">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-200">Codigo Downloader oficial</p>
+            <p class="mt-2 font-display text-5xl font-black leading-none text-white md:text-6xl">{site.downloaderCode}</p>
+            <p class="mt-3 text-sm text-zinc-200">Valido para la ruta recomendada en Fire Stick y equipos compatibles.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="mx-grid">
+        <a
+          href={cards[0].href}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          referrerpolicy="no-referrer"
+          class="mx-tile mx-tile-feature"
+        >
+          <div>
+            <p class="mx-label">APK directo</p>
+            <h2 class="mt-2 font-display text-3xl font-black text-white md:text-4xl">{cards[0].title}</h2>
+            <p class="mt-3 max-w-xl text-zinc-100/95">{cards[0].summary}</p>
+          </div>
+          <span class="mx-btn">{cards[0].cta}</span>
+        </a>
+
+        <a href={cards[1].href} class="mx-tile mx-tile-guide">
+          <div>
+            <p class="mx-label">Guia en video</p>
+            <h2 class="mt-2 font-display text-2xl font-black text-white">{cards[1].title}</h2>
+            <p class="mt-3 text-zinc-100/90">{cards[1].summary}</p>
+          </div>
+          <span class="mx-btn">{cards[1].cta}</span>
+        </a>
+
+        <a href={cards[2].href} class="mx-tile mx-tile-guide">
+          <div>
+            <p class="mx-label">Instalacion optimizada</p>
+            <h2 class="mt-2 font-display text-2xl font-black text-white">{cards[2].title}</h2>
+            <p class="mt-3 text-zinc-100/90">{cards[2].summary}</p>
+          </div>
+          <span class="mx-btn">{cards[2].cta}</span>
+        </a>
+
+        <a href={cards[3].href} class="mx-tile mx-tile-fire">
+          <div>
+            <p class="mx-label">Ruta con Downloader</p>
+            <h2 class="mt-2 font-display text-2xl font-black text-white">{cards[3].title}</h2>
+            <p class="mt-3 text-zinc-100/90">{cards[3].summary}</p>
+          </div>
+          <span class="mx-btn">{cards[3].cta}</span>
+        </a>
+      </section>
+    </section>
+  </main>
+
+  <style>
+    .mx-stage {
+      background:
+        radial-gradient(120% 90% at 15% 0%, rgba(16, 185, 129, 0.22), transparent 62%),
+        radial-gradient(120% 90% at 85% 100%, rgba(244, 63, 94, 0.22), transparent 62%),
+        linear-gradient(145deg, rgba(9, 12, 28, 0.96), rgba(8, 9, 20, 0.92));
+    }
+
+    .mx-stage-glow {
+      position: absolute;
+      inset: auto -15% -35% 45%;
+      height: 260px;
+      background: radial-gradient(circle at center, rgba(244, 63, 94, 0.32), transparent 70%);
+      filter: blur(6px);
+      pointer-events: none;
+    }
+
+    .mx-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .mx-tile {
+      display: flex;
+      min-height: 220px;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 1.5rem;
+      background: linear-gradient(160deg, rgba(17, 24, 39, 0.92), rgba(7, 9, 19, 0.88));
+      transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+    }
+
+    .mx-tile:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .mx-tile-feature {
+      grid-column: span 12;
+      min-height: 260px;
+      background:
+        linear-gradient(130deg, rgba(16, 185, 129, 0.22), rgba(244, 63, 94, 0.16)),
+        linear-gradient(160deg, rgba(9, 15, 31, 0.95), rgba(6, 8, 18, 0.92));
+    }
+
+    .mx-tile-guide {
+      grid-column: span 12;
+    }
+
+    .mx-tile-fire {
+      grid-column: span 12;
+      background:
+        radial-gradient(120% 80% at 85% 5%, rgba(251, 146, 60, 0.22), transparent 60%),
+        linear-gradient(160deg, rgba(19, 17, 22, 0.94), rgba(9, 8, 14, 0.9));
+    }
+
+    .mx-label {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 0.28rem 0.72rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgb(226 232 240);
+    }
+
+    .mx-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: linear-gradient(92deg, rgb(225, 29, 72), rgb(190, 24, 93));
+      padding: 0.78rem 1rem;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: white;
+      transition: filter 180ms ease;
+    }
+
+    .mx-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    .mx-code {
+      box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.18);
+    }
+
+    @media (min-width: 768px) {
+      .mx-tile-feature {
+        grid-column: span 7;
+      }
+
+      .mx-tile-guide {
+        grid-column: span 5;
+      }
+
+      .mx-tile-fire {
+        grid-column: span 5;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .mx-tile-feature {
+        grid-column: span 6;
+        min-height: 300px;
+      }
+
+      .mx-tile-guide {
+        grid-column: span 3;
+      }
+
+      .mx-tile-fire {
+        grid-column: span 3;
+      }
+    }
+  </style>
+
+  <Footer />
+</Layout>

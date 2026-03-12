@@ -23,24 +23,25 @@ import { site } from '../config/site';
         <div class="mt-8 space-y-4">
           <!-- Móvil / Tablet -->
           <article class="card-dark-hover flex items-center gap-4 p-5">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose-600/10 text-2xl">📱</div>
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose-600/10 text-xs font-bold">APP</div>
             <div class="flex-1">
               <h3 class="font-display text-base font-bold text-white">Para Celular o Tablet</h3>
               <p class="mt-1 text-sm text-zinc-100/95">Android 5.0 o superior. Se instala en segundos.</p>
             </div>
             <a
-              href={`${site.whatsappLink}?text=${encodeURIComponent('Hola, quiero la app de Flujo TV para mi celular/tablet Android')}`}
+              href={site.download.mobileApkHref}
               class="shrink-0 rounded-full bg-rose-600 px-4 py-2 text-xs font-bold text-white transition-all hover:bg-rose-500"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
+              referrerpolicy="no-referrer"
             >
-              Solicitar
+              Descargar APK
             </a>
           </article>
 
           <!-- TV Box / Fire Stick -->
           <article class="card-dark-hover flex items-center gap-4 p-5">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-2xl">🔥</div>
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-xs font-bold">TV</div>
             <div class="flex-1">
               <h3 class="font-display text-base font-bold text-white">Para TV Box o Fire Stick</h3>
               <p class="mt-1 text-sm text-zinc-100/95">Incluye Google TV y Xiaomi Stick. Instalación asistida.</p>
@@ -56,10 +57,19 @@ import { site } from '../config/site';
           </article>
         </div>
 
+        <div class="mt-5">
+          <a
+            href="/descargas/"
+            class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white/20"
+          >
+            Ver centro de guias
+          </a>
+        </div>
+
         <!-- Código de instalación -->
         <div class="mt-6 flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-5 py-3">
           <span class="text-xs font-medium text-zinc-100/85">Código de instalación:</span>
-          <code class="font-display text-lg font-bold tracking-widest text-white">888888</code>
+          <code class="font-display text-lg font-bold tracking-widest text-white">{site.downloaderCode}</code>
         </div>
       </div>
 

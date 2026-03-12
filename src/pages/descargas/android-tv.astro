@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../config/site';
+
+const title = 'Guia Android TV y TV Box | Flujo TV Mexico';
+const description = 'Guia de instalacion Flujo TV Mexico para Android TV y TV Box con video y FAQ tecnica.';
+
+const steps = [
+  'Instala Downloader by AFTVnews en tu Android TV o TV Box.',
+  'Habilita permisos para instalar apps externas.',
+  `Ingresa el codigo ${site.downloaderCode} y descarga la app oficial.`,
+  'Completa la instalacion e inicia sesion con tus credenciales activas.',
+  'Verifica reproduccion en vivo y calidad de imagen.'
+];
+
+const faqItems = [
+  { q: 'Que necesito para instalar?', a: 'Dispositivo Android compatible, conexion estable y codigo Downloader oficial.' },
+  { q: 'Si se corta la descarga?', a: 'Repite el proceso y valida red estable. Soporte te acompana en tiempo real.' },
+  { q: 'Puedo instalar en otro equipo?', a: 'Si, en equipos compatibles segun pantallas permitidas por tu plan.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Guia Flujo TV Mexico Android TV',
+  description: 'Video oficial de instalacion de Flujo TV Mexico para Android TV y TV Box.',
+  embedUrl: `https://fast.wistia.net/embed/iframe/${site.videos.androidTv.primary}`,
+  thumbnailUrl: `https://fast.wistia.com/embed/medias/${site.videos.androidTv.primary}/swatch`,
+  uploadDate: '2026-03-12',
+};
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} slot="head" />
+  <Navigation />
+
+  <main class="py-16 md:py-24">
+    <section class="container-main grid gap-6 lg:grid-cols-[1fr_320px]">
+      <article class="surface-panel p-6 md:p-8">
+        <a href="/descargas/" class="text-sm font-semibold text-rose-300 hover:text-white">← Volver al centro de guias</a>
+        <h1 class="mt-4 font-display text-4xl font-bold text-white">Guia Android TV y TV Box</h1>
+        <p class="mt-3 text-zinc-100/90">Proceso recomendado para instalar Flujo TV Mexico en equipos Android TV compatibles.</p>
+
+        <div class="mt-5 rounded-xl border border-white/15 bg-white/10 p-4">
+          <p class="text-xs uppercase tracking-[0.2em] text-rose-300">Codigo Downloader</p>
+          <p class="mt-1 font-display text-3xl font-bold text-white">{site.downloaderCode}</p>
+        </div>
+
+        <div class="mt-6 rounded-xl border border-white/15 bg-black/25 p-4">
+          <p class="mb-3 text-sm text-zinc-200">Video guia oficial</p>
+          <Fragment set:html={`
+            <script src="https://fast.wistia.com/player.js" async><\/script>
+            <script src="https://fast.wistia.com/embed/${site.videos.androidTv.primary}.js" async type="module"><\/script>
+            <style>wistia-player[media-id='${site.videos.androidTv.primary}']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/${site.videos.androidTv.primary}/swatch');display:block;filter:blur(5px);padding-top:56.25%;}</style>
+            <wistia-player media-id="${site.videos.androidTv.primary}" aspect="1.7777777777777777"></wistia-player>
+          `} />
+        </div>
+
+        <div class="mt-6 space-y-3">
+          {steps.map((step, index) => (
+            <div class="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
+              <span class="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-rose-500/20 text-xs font-bold text-rose-200">{index + 1}</span>
+              <p class="text-zinc-100">{step}</p>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <aside class="card-dark h-fit p-5 lg:sticky lg:top-24">
+        <p class="text-xs uppercase tracking-[0.2em] text-rose-300">Soporte</p>
+        <h2 class="mt-2 font-display text-2xl font-bold text-white">¿Necesitas ayuda?</h2>
+        <p class="mt-2 text-sm text-zinc-200/90">Te guiamos en instalacion y activacion para dejarlo operativo.</p>
+        <a href={`${site.whatsappLink}?text=${encodeURIComponent('Hola, necesito ayuda con la guia Android TV de Flujo TV Mexico.')}`} target="_blank" rel="noopener noreferrer" class="mt-5 block rounded-full bg-rose-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-rose-500">Soporte por WhatsApp</a>
+      </aside>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

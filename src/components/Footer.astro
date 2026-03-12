@@ -13,8 +13,8 @@ import { site } from '../config/site';
         Empieza hoy. En minutos ya estás disfrutando.
       </h2>
       <p class="relative mx-auto mt-4 max-w-lg text-base text-zinc-100">
-        Más de 3,000 canales, películas, series y deportes en 4K.
-        Sin contratos, sin complicaciones. Solo descarga, activa y disfruta.
+        Todo el deporte en vivo, especiales PPV y VOD en Ultra HD 4K.
+        Sin contratos forzosos ni complicaciones. Baja la app y empieza ahora.
       </p>
       <a
         href={`${site.whatsappLink}?text=${encodeURIComponent('Hola, quiero contratar Flujo TV')}`}
@@ -38,11 +38,13 @@ import { site } from '../config/site';
       <!-- Logo + info -->
       <div class="text-center md:text-left">
         <img src="/images/logo_flujo.webp" alt="Flujo TV" class="mx-auto h-9 w-auto md:mx-0" width="130" height="36" />
-        <p class="mt-3 text-sm text-zinc-100/90">Servicio Premium para Latinoamérica</p>
+        <p class="mt-3 text-sm text-zinc-100/90">Servicio oficial para Mexico</p>
       </div>
 
       <!-- Links -->
       <div class="flex items-center gap-6 text-sm text-zinc-100/90">
+        <a href="/descargas/" class="hover:text-zinc-300 transition-colors">Guias de Instalacion</a>
+        <span>·</span>
         <a href="/terminos" class="hover:text-zinc-300 transition-colors">Términos de Uso</a>
         <span>·</span>
         <a href="/privacidad" class="hover:text-zinc-300 transition-colors">Política de Privacidad</a>
@@ -68,7 +70,7 @@ import { site } from '../config/site';
         Requiere conexión a internet estable.
       </p>
       <p class="mt-4 text-center text-xs text-zinc-200/65">
-        © {new Date().getFullYear()} Flujo TV — Distribuidor Oficial Latinoamérica
+        © {new Date().getFullYear()} Flujo TV — Distribuidor Oficial Mexico
       </p>
     </div>
   </div>

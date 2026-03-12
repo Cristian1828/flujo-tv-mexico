@@ -1,0 +1,18 @@
+# Flujo TV Mexico Oficial
+> Landing oficial de Flujo TV Mexico con planes, guias de instalacion por dispositivo y soporte garantizado.
+
+## Paginas principales
+- [Inicio](https://mx.flujooficial.com/): Resumen del servicio, beneficios y planes vigentes.
+- [Centro de guias](https://mx.flujooficial.com/descargas/): Guias de instalacion y APK oficial.
+- [Guia Android TV](https://mx.flujooficial.com/descargas/android-tv/): Instalacion para Android TV y TV Box.
+- [Guia Google TV](https://mx.flujooficial.com/descargas/google-tv/): Instalacion para Google TV y Chromecast.
+- [Guia Fire Stick](https://mx.flujooficial.com/descargas/fire-stick/): Instalacion para Fire Stick.
+- [Privacidad](https://mx.flujooficial.com/privacidad/): Politica de privacidad.
+- [Terminos](https://mx.flujooficial.com/terminos/): Terminos y condiciones.
+
+## Datos clave
+- Dominio oficial: mx.flujooficial.com.
+- Codigo Downloader oficial: 481352.
+- Compatibilidad: Android movil y tablet, TV Box, Fire Stick, Google TV y Xiaomi Stick.
+- Pantallas simultaneas: hasta 3.
+- Requisito: internet estable.

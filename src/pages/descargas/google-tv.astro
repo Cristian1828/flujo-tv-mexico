@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../config/site';
+
+const title = 'Guia Google TV | Flujo TV Mexico';
+const description = 'Guia de instalacion Flujo TV Mexico para Google TV y Chromecast con checklist y video.';
+
+const steps = [
+  'Instala Downloader desde Google Play en tu Google TV.',
+  'Activa permisos para instalar aplicaciones externas.',
+  `Ingresa el codigo ${site.downloaderCode} para descargar la app oficial.`,
+  'Instala, abre la app e inicia sesion con cuenta activa.',
+  'Verifica reproduccion y ajusta calidad segun tu conexion.'
+];
+
+const faqItems = [
+  { q: 'Funciona en Chromecast con Google TV?', a: 'Si, es compatible con Chromecast con Google TV y televisores con ese sistema.' },
+  { q: 'Necesito otra cuenta?', a: 'No, solo tu cuenta habitual para descargar Downloader.' },
+  { q: 'Puedo repetir instalacion?', a: 'Si, en equipos compatibles segun pantallas de tu plan.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Guia Flujo TV Mexico Google TV',
+  description: 'Video oficial de instalacion de Flujo TV Mexico para Google TV.',
+  embedUrl: `https://fast.wistia.net/embed/iframe/${site.videos.googleTv.primary}`,
+  thumbnailUrl: `https://fast.wistia.com/embed/medias/${site.videos.googleTv.primary}/swatch`,
+  uploadDate: '2026-03-12',
+};
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} slot="head" />
+  <Navigation />
+
+  <main class="py-16 md:py-24">
+    <section class="container-main grid gap-6 lg:grid-cols-[1fr_320px]">
+      <article class="surface-panel p-6 md:p-8">
+        <a href="/descargas/" class="text-sm font-semibold text-rose-300 hover:text-white">← Volver al centro de guias</a>
+        <h1 class="mt-4 font-display text-4xl font-bold text-white">Guia Google TV y Chromecast</h1>
+        <p class="mt-3 text-zinc-100/90">Instalacion recomendada para Google TV en Mexico con pasos claros y soporte.</p>
+
+        <div class="mt-5 rounded-xl border border-white/15 bg-white/10 p-4">
+          <p class="text-xs uppercase tracking-[0.2em] text-rose-300">Codigo Downloader</p>
+          <p class="mt-1 font-display text-3xl font-bold text-white">{site.downloaderCode}</p>
+        </div>
+
+        <div class="mt-6 rounded-xl border border-white/15 bg-black/25 p-4">
+          <p class="mb-3 text-sm text-zinc-200">Video guia oficial</p>
+          <Fragment set:html={`
+            <script src="https://fast.wistia.com/player.js" async><\/script>
+            <script src="https://fast.wistia.com/embed/${site.videos.googleTv.primary}.js" async type="module"><\/script>
+            <style>wistia-player[media-id='${site.videos.googleTv.primary}']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/${site.videos.googleTv.primary}/swatch');display:block;filter:blur(5px);padding-top:56.25%;}</style>
+            <wistia-player media-id="${site.videos.googleTv.primary}" aspect="1.7777777777777777"></wistia-player>
+          `} />
+        </div>
+
+        <div class="mt-6 space-y-3">
+          {steps.map((step, index) => (
+            <div class="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
+              <span class="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-rose-500/20 text-xs font-bold text-rose-200">{index + 1}</span>
+              <p class="text-zinc-100">{step}</p>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <aside class="card-dark h-fit p-5 lg:sticky lg:top-24">
+        <p class="text-xs uppercase tracking-[0.2em] text-rose-300">Soporte</p>
+        <h2 class="mt-2 font-display text-2xl font-bold text-white">Asistencia en tiempo real</h2>
+        <p class="mt-2 text-sm text-zinc-200/90">Te ayudamos en permisos, instalacion y activacion final.</p>
+        <a href={`${site.whatsappLink}?text=${encodeURIComponent('Hola, necesito ayuda con la guia Google TV de Flujo TV Mexico.')}`} target="_blank" rel="noopener noreferrer" class="mt-5 block rounded-full bg-rose-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-rose-500">Soporte por WhatsApp</a>
+      </aside>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

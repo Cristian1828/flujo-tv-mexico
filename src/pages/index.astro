@@ -13,16 +13,16 @@ import Footer from '../components/Footer.astro';
 import MobileFloatingCTA from '../components/MobileFloatingCTA.astro';
 import { site, faqItems, plans } from '../config/site';
 
-const pageTitle = 'Flujo TV Premium Latinoamérica | Canales en Vivo, Series y Deportes 4K';
+const pageTitle = 'Flujo TV Mexico Oficial | Canales en Vivo, Series y Deportes';
 const pageDescription =
-  'Flujo TV Premium para Latinoamérica: más de 3,000 canales en vivo, películas, series y deportes en 4K. Compatible con Android, TV Box, Fire Stick, Google TV y Xiaomi Stick.';
+  'Flujo TV Mexico oficial con mas de 3000 canales en vivo, peliculas, series y deportes. Compatible con Android, TV Box, Fire Stick, Google TV y Xiaomi Stick.';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Flujo TV Premium Latinoamérica',
-  serviceType: 'Servicio Premium para Latinoamérica',
-  areaServed: ['AR', 'BO', 'CL', 'CO', 'EC', 'MX', 'PE', 'UY', 'PY', 'VE'],
+  name: 'Flujo TV Mexico',
+  serviceType: 'Servicio de streaming para Mexico',
+  areaServed: ['MX'],
   provider: {
     '@type': 'Organization',
     name: 'Flujo TV',
@@ -68,11 +68,11 @@ const faqSchema = {
   <main class="space-y-0">
     <Hero />
     <Benefits />
+    <Testimonials />
     <Catalogo />
     <HowItWorks />
     <Pricing />
     <Download />
-    <Testimonials />
     <FAQ />
   </main>
 

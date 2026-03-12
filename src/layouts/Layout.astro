@@ -7,11 +7,12 @@ interface Props {
 }
 
 const {
-  title = `Flujo TV Premium — ${site.tagline}`,
-  description = site.description,
+  title = `Flujo TV Mexico Oficial | Deportes en Vivo y Streaming Premium`,
+  description = 'Flujo TV Mexico oficial con canales en vivo, peliculas, series y deportes. Instalacion guiada para Android, TV Box, Fire Stick y Google TV.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, site.url).href;
+const rootCanonical = new URL('/', site.url).href;
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
 ---
@@ -21,20 +22,23 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow" />
-    <link rel="alternate" hreflang="es-419" href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="keywords" content="flujo tv mexico, flujo tv oficial mexico, flujo tv apk mexico, instalar flujo tv mexico, codigo downloader 481352" />
+    <link rel="alternate" hreflang="es-MX" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={rootCanonical} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Flujo TV Premium" />
+    <meta property="og:site_name" content="Flujo TV Mexico" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={`${site.url}/images/banner-compatibles1.webp`} />
+    <meta property="og:image:alt" content="Flujo TV Mexico oficial" />
     <meta property="og:locale" content="es_419" />
 
     <!-- Twitter -->
@@ -42,6 +46,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${site.url}/images/banner-compatibles1.webp`} />
+    <meta name="twitter:site" content="@flujotv" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,18 +61,28 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
     <link rel="shortcut icon" href="/images/logo_flujo.webp" />
     <link rel="apple-touch-icon" href="/images/logo_flujo.webp" />
     <meta name="theme-color" content="#E11D48" />
+    <meta name="geo.region" content="MX" />
 
     <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: site.name,
+      name: 'Flujo TV Mexico',
       url: site.url,
       description: site.description,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${site.url}/search?q={search_term_string}`,
-        'query-input': 'required name=search_term_string',
+      inLanguage: 'es-MX',
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Flujo TV Mexico',
+      url: site.url,
+      logo: `${site.url}/images/logo_flujo.webp`,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: `+${site.whatsapp}`,
+        contactType: 'customer support',
+        availableLanguage: ['es-MX'],
       },
     })} />
 

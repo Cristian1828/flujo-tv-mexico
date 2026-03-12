@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [react(), tailwind()],
-  site: 'https://premium.flujooficial.com',
+  site: 'https://mx.flujooficial.com',
   i18n: {
     defaultLocale: 'es',
     locales: ['es'],
