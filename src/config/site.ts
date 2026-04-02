@@ -6,7 +6,7 @@ export const site = {
   locale: 'es-MX',
   whatsapp: '51914326729',
   whatsappLink: 'https://wa.me/51914326729',
-  downloaderCode: '481352',
+  downloaderCode: '5756106',
   download: {
     mobileApkHref: 'https://github.com/Cristian1828/apk-flujoTV/releases/download/v1.0/flujo-premium.apk',
   },
