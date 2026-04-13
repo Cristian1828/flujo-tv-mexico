@@ -6,7 +6,7 @@ export const site = {
   locale: 'es-MX',
   whatsapp: '51914326729',
   whatsappLink: 'https://wa.me/51914326729',
-  downloaderCode: '1404123',
+  downloaderCode: '7132299',
   download: {
     mobileApkHref: 'https://github.com/Cristian1828/apk-flujoTV/releases/download/v1.0/flujo-premium.apk',
   },
@@ -213,5 +213,26 @@ export const faqItems = [
     answer:
       'Flujo TV funciona exclusivamente en dispositivos Android: celulares, tablets, TV Box, Fire Stick, Google TV y Xiaomi Stick.',
   },
+  {
+    question: '¿Tienen opciones para distribuidores o negocios?',
+    answer:
+      'Sí, contamos con opciones especiales para distribuidores y emprendedores que deseen manejar volumen. Para más información sobre disponibilidad, condiciones y precios al por mayor, escríbenos por WhatsApp y te asesoramos.',
+  },
 ];
 
+export const seoKeywords = [
+  'flujo tv mexico', 'flujo tv oficial mexico', 'streaming mexico',
+  'flujo paneles México', 'panel flujo tv México', 'paneles flujo tv',
+  'distribuidor flujo tv México', 'revender flujo tv México',
+  'reseller flujo tv México', 'mayorista flujo tv México',
+  'venta paneles flujo tv México', 'creditos flujo tv',
+  'flujo tv distribuidor oficial', 'flujo tv mayorista',
+  'comprar paneles flujo tv', 'negocio flujo tv México',
+
+  // ── Promociones y Versiones ──
+  'ultima version de flujo tv', 'flujo tv version 8.4.2', 'flujo tv 8.4.2',
+  'descargar flujo tv 8.4.2', 'actualizar flujo tv', 'actualizacion flujo tv',
+  'flujo tv comunidad', 'foro flujo tv', 'ayuda foro flujo tv',
+  'flujo tv barato', 'promociones flujo tv', 'descuentos flujo tv',
+  'oferta flujo tv', 'flujo tv economico'
+];
