@@ -12,7 +12,7 @@
 
 ## Datos clave
 - Dominio oficial: mx.flujooficial.com.
-- Codigo Downloader oficial: 5756106.
+- Codigo Downloader oficial: 1404123.
 - Compatibilidad: Android movil y tablet, TV Box, Fire Stick, Google TV y Xiaomi Stick.
 - Pantallas simultaneas: hasta 3.
 - Requisito: internet estable.
