@@ -4,7 +4,7 @@ Landing oficial de Flujo TV Premium para LATAM, construida con Astro + Tailwind.
 
 ## Dominio oficial
 
-- https://premium.flujooficial.com
+- https://mx.flujooficial.com
 
 ## Stack
 
@@ -66,4 +66,4 @@ Crear `.env` tomando como base `.env.example`:
 ## Contacto comercial
 
 - WhatsApp: +51 914 326 729
-- Dominio: premium.flujooficial.com
+- Dominio: mx.flujooficial.com
