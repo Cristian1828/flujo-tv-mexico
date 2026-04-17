@@ -2,6 +2,7 @@ export const site = {
   name: 'FLUJO TV MEXICO',
   tagline: 'Entretenimiento premium en una sola app',
   domain: 'mx.flujooficial.com',
+  canonical: 'https://mx.flujooficial.com',
   url: 'https://mx.flujooficial.com',
   locale: 'es-MX',
   whatsapp: '51914326729',

@@ -11,8 +11,9 @@ const {
   description = 'Flujo TV Mexico oficial con canales en vivo, peliculas, series y deportes. Instalacion guiada para Android, TV Box, Fire Stick y Google TV.',
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, site.url).href;
-const rootCanonical = new URL('/', site.url).href;
+const siteBase = site.canonical ?? site.url;
+const canonical = new URL(Astro.url.pathname, siteBase).href;
+const rootCanonical = new URL('/', siteBase).href;
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
 ---
@@ -37,7 +38,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={`${site.url}/images/banner-compatibles1.webp`} />
+    <meta property="og:image" content={`${siteBase}/images/banner-compatibles1.webp`} />
     <meta property="og:image:alt" content="Flujo TV Mexico oficial" />
     <meta property="og:locale" content="es_419" />
 
@@ -45,7 +46,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${site.url}/images/banner-compatibles1.webp`} />
+    <meta name="twitter:image" content={`${siteBase}/images/banner-compatibles1.webp`} />
     <meta name="twitter:site" content="@flujotv" />
 
     <!-- Fonts -->
@@ -68,7 +69,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Flujo TV Mexico',
-      url: site.url,
+      url: siteBase,
       description: site.description,
       inLanguage: 'es-MX',
     })} />
@@ -76,8 +77,8 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Flujo TV Mexico',
-      url: site.url,
-      logo: `${site.url}/images/logo_flujo.webp`,
+      url: siteBase,
+      logo: `${siteBase}/images/logo_flujo.webp`,
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: `+${site.whatsapp}`,

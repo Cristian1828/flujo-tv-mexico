@@ -26,7 +26,7 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Flujo TV',
-    url: site.url,
+    url: site.canonical,
   },
   offers: {
     '@type': 'AggregateOffer',
@@ -40,7 +40,7 @@ const serviceSchema = {
       price: plan.price,
       name: `Plan ${plan.name}`,
       availability: 'https://schema.org/InStock',
-      url: `${site.url}/#planes`,
+      url: `${site.canonical}/#planes`,
     })),
   },
 };
