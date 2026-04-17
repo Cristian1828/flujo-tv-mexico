@@ -1,9 +1,9 @@
-# SEO de Indexación Real — Checklist PRD (Latinoamérica)
+# SEO de Indexacion Real — Checklist PRD (Mexico)
 
 ## 1) Google Search Console (obligatorio)
-- Añadir propiedad de dominio: `premium.flujooficial.com`
+- Anadir propiedad de dominio: `mx.flujooficial.com`
 - Verificar propiedad (DNS TXT recomendado)
-- Enviar sitemap: `https://premium.flujooficial.com/sitemap.xml`
+- Enviar sitemap: `https://mx.flujooficial.com/sitemap.xml`
 - Usar "Inspección de URL" para solicitar indexación de:
   - `/`
   - `/terminos`
