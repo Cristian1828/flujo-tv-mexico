@@ -7,9 +7,9 @@ export const site = {
   locale: 'es-MX',
   whatsapp: '51914326729',
   whatsappLink: 'https://wa.me/51914326729',
-  downloaderCode: '7132299',
+  downloaderCode: '9249124',
   download: {
-    mobileApkHref: 'https://github.com/Cristian1828/apk-flujoTV/releases/download/v1.0/flujo-premium.apk',
+    mobileApkHref: 'https://github.com/Cristian1828/apk-flujoTV/releases/download/v2.0/flujo_mobile_v8.4.3.apk',
   },
   videos: {
     androidTv: {
@@ -19,8 +19,7 @@ export const site = {
       primary: 'jfsexj7t5g',
     },
   },
-  description:
-    'Flujo TV Mexico oficial: mas de 3000 canales en vivo, peliculas, series y deportes en alta calidad. Compatible con Android, TV Box, Fire Stick, Google TV y Xiaomi Stick.',
+  description: 'Flujo TV México — Líder en entretenimiento premium. Más de 3000 canales en vivo, películas de estreno, box, lucha libre y deportes nacionales en 4K. La mejor app de streaming sin contratos. Compatible con TV Box, Fire Stick y Android. Activación inmediata. Nueva versión actualizada 8.4.3.',
 };
 
 export const stats = [
@@ -221,19 +220,11 @@ export const faqItems = [
   },
 ];
 
-export const seoKeywords = [
-  'flujo tv mexico', 'flujo tv oficial mexico', 'streaming mexico',
-  'flujo paneles México', 'panel flujo tv México', 'paneles flujo tv',
-  'distribuidor flujo tv México', 'revender flujo tv México',
-  'reseller flujo tv México', 'mayorista flujo tv México',
-  'venta paneles flujo tv México', 'creditos flujo tv',
-  'flujo tv distribuidor oficial', 'flujo tv mayorista',
-  'comprar paneles flujo tv', 'negocio flujo tv México',
+export const siteSeo = {
+  title: 'Flujo TV México Oficial | Instalación, Ofertas WhatsApp y Soporte HD',
+  description: 'Flujo TV México — La mejor plataforma VOD del país. Instala el APK oficial y disfruta más de 3,000 canales de TV, deportes exclusivos y cine de estreno en 4K. Descuentos únicos por WhatsApp, soporte 24/7 sin contratos. Nueva versión actualizada 8.4.3.',
+};
 
-  // ── Promociones y Versiones ──
-  'ultima version de flujo tv', 'flujo tv version 8.4.2', 'flujo tv 8.4.2',
-  'descargar flujo tv 8.4.2', 'actualizar flujo tv', 'actualizacion flujo tv',
-  'flujo tv comunidad', 'foro flujo tv', 'ayuda foro flujo tv',
-  'flujo tv barato', 'promociones flujo tv', 'descuentos flujo tv',
-  'oferta flujo tv', 'flujo tv economico'
+export const seoKeywords = [
+  'flujo tv mexico', 'flujo tv oficial mexico', 'fujo tv mexico', 'mejor plataforma streaming mexico', 'tv por internet mexico', 'ver deportes en vivo mexico hd', 'suscripcion flujo tv mexico', 'alternativa izzi', 'alternativa totalplay', 'streaming sin contratos mexico', 'descargar flujo tv mexico', 'apk flujo tv mexico', 'activacion inmediata flujo tv', 'canales premium hd', 'peliculas de estreno mexico', 'ofertas flujo tv mexico', 'promociones streaming mexico', 'nueva version actualizada 8.4.3'
 ];

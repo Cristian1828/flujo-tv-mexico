@@ -11,11 +11,10 @@ import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 import MobileFloatingCTA from '../components/MobileFloatingCTA.astro';
-import { site, faqItems, plans } from '../config/site';
+import { site, faqItems, plans, siteSeo } from '../config/site';
 
-const pageTitle = 'Flujo TV Mexico Oficial | Canales en Vivo, Series y Deportes';
-const pageDescription =
-  'Flujo TV Mexico oficial con mas de 3000 canales en vivo, peliculas, series y deportes. Compatible con Android, TV Box, Fire Stick, Google TV y Xiaomi Stick.';
+const pageTitle = siteSeo.title || site.name;
+const pageDescription = siteSeo.description || site.description;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -59,7 +58,7 @@ const faqSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={siteSeo?.title || site.name} description={siteSeo?.description || site.description}>
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 

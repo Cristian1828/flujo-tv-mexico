@@ -4,11 +4,14 @@ import { site } from '../config/site';
 interface Props {
   title?: string;
   description?: string;
+
+  keywords?: string;
 }
 
 const {
   title = `Flujo TV Mexico Oficial | Deportes en Vivo y Streaming Premium`,
   description = 'Flujo TV Mexico oficial con canales en vivo, peliculas, series y deportes. Instalacion guiada para Android, TV Box, Fire Stick y Google TV.',
+  keywords = site.seo?.keywords?.join(", "),
 } = Astro.props;
 
 const siteBase = site.canonical ?? site.url;
@@ -28,7 +31,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="keywords" content="flujo tv mexico, flujo tv oficial mexico, flujo tv apk mexico, instalar flujo tv mexico, codigo downloader 7132299" />
+    <meta name="keywords" content={keywords} />
     <link rel="alternate" hreflang="es-MX" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={rootCanonical} />
 
