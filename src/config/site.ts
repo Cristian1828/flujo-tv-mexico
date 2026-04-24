@@ -221,8 +221,8 @@ export const faqItems = [
 ];
 
 export const siteSeo = {
-  title: 'Flujo TV México Oficial | Instalación, Ofertas WhatsApp y Soporte HD',
-  description: 'Flujo TV México — La mejor plataforma VOD del país. Instala el APK oficial y disfruta más de 3,000 canales de TV, deportes exclusivos y cine de estreno en 4K. Descuentos únicos por WhatsApp, soporte 24/7 sin contratos. Nueva versión actualizada 8.4.3.',
+  title: 'Flujo TV México · Box, Deportes y Series · Desde $9',
+  description: 'Flujo TV México: box, deportes nacionales, series y +3,000 canales HD. Sin contratos ni instalador. TV Box, Fire Stick y Android. ¡Activa desde $9 USD!',
 };
 
 export const seoKeywords = [

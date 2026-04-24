@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = `Flujo TV Mexico Oficial | Deportes en Vivo y Streaming Premium`,
-  description = 'Flujo TV Mexico oficial con canales en vivo, peliculas, series y deportes. Instalacion guiada para Android, TV Box, Fire Stick y Google TV.',
+  title = `Flujo TV México · Box, Deportes y Series · Desde $9`,
+  description = 'Flujo TV México: box, deportes nacionales, series y +3,000 canales HD. Sin contratos ni instalador. TV Box, Fire Stick y Android. ¡Activa desde $9 USD!',
   keywords = site.seo?.keywords?.join(", "),
 } = Astro.props;
 
@@ -22,7 +22,7 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es-MX" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,6 +59,9 @@ const metaPixelId = import.meta.env.PUBLIC_META_PIXEL_ID;
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload LCP -->
+    <link rel="preload" as="image" href="/images/hero-desk-00.webp" fetchpriority="high" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="/images/logo_flujo.webp" />
