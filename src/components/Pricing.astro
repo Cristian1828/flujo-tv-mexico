@@ -74,13 +74,10 @@ import { site, plans } from '../config/site';
 
           <!-- CTA -->
           <a
-            href={plan.paypal}
+            href={`/checkout?plan=${plan.id}`}
             data-cta-track={`planes_${plan.id}_click`}
             data-cta-section="planes"
             class="plan-cta mt-6 block rounded-full py-3 text-center text-sm font-bold transition-all duration-300"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            referrerpolicy="no-referrer"
           >
             {plan.cta}
           </a>
